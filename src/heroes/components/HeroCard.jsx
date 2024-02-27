@@ -18,12 +18,12 @@ export const HeroCard = ({
           <div className="card m-1 p-0">
             <div className="row g-0">
               <div className="col-md-4" style={{ overflow: 'hidden' }}>
-                <img src={heroImgUrl} className="img-fluid rounded-start" style={{ width: '100%', height: '180px', objectFit: 'cover' }} alt={superhero} />
+                <img src={heroImgUrl} className="img-fluid rounded-start" style={{ width: '100%', height: '185px', objectFit: 'cover' }} alt={superhero} />
               </div>
               <div className="col-md-8">
                 <div className="card-body d-flex flex-column justify-content-between" style={{ height: '100%' }}>
                   <h5 className="card-title">{superhero}</h5>
-                  <h7 className="card-title text-muted">{firstAppearance}</h7>
+                  <p className="card-title text-muted">{firstAppearance}</p>
                   <p className="card-text">{alterEgo}</p>
                   <Link to={`/hero/${id}`}>...mas</Link>
                 </div>
