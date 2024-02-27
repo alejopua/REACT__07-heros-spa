@@ -8,7 +8,7 @@ export const HeroCard = ({
   firstAppearance,
 }) => {
 
-  const heroImgUrl = `/public/heroes/${ id }.jpg`
+  const heroImgUrl = `../heroes/${ id }.jpg`
   return (
     <>
         <div className='mb-1 animate__animated animate__fadeIn'>
