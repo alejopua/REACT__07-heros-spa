@@ -15,7 +15,7 @@ export const HeroCard = ({
           <div className="card m-1 p-0">
             <div className="row g-0">
               <div className="col-md-4" style={{ overflow: 'hidden' }}>
-                <img src={heroImgUrl} className="img-fluid rounded-start" style={{ width: '100%', height: '185px', objectFit: 'cover' }} alt={superhero} />
+                <img src={heroImgUrl} className="img-fluid rounded-start" style={{ width: '100%', height: '-webkit-fill-available', minHeight: '185px', objectFit: 'cover' }} alt={superhero} />
               </div>
               <div className="col-md-8">
                 <div className="card-body d-flex flex-column justify-content-between" style={{ height: '100%' }}>

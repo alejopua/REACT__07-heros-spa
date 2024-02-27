@@ -2,22 +2,20 @@ import { useLocation, useNavigate } from 'react-router-dom'
 import queryString from 'query-string'
 import { useForm } from "../../hooks/useForm"
 import { HeroCard } from "../components/HeroCard"
+import { getHeroesByName } from '../helpers'
 
 export const SearchPages = () => {
   const navigate = useNavigate()
   const location = useLocation()
 
   const { q = ''} = queryString.parse( location.search )
-  console.log({ q })
+  const heroes = getHeroesByName( q )
 
-  const { searchText, onInputChange} = useForm({
-    searchText: ''
-  })
+  const { searchText, onInputChange} = useForm({ searchText: q.length > 0 ? q : ''})
 
   const onSearchSubmit = (e) => {
     e.preventDefault()
-    if (searchText.trim().length <= 1) return;
-    navigate(`?q=${ searchText.lowerCase().trim() }`)
+    navigate(`?q=${ searchText.toLocaleLowerCase().trim() }`)
   }
 
   return (
@@ -47,14 +45,19 @@ export const SearchPages = () => {
 
         <div className="col-7">
           <div className="animate__animated animate__fadeIn">
-            <div className="alert alert-info">
-              Search a hero
-            </div>
-            <div className="alert alert-danger">
-              Hero <b>{ q }</b> not encountered
-            </div>
 
-            {/* <HeroCard /> */}
+            {
+              ( q === '' ) 
+                ? <div className="alert alert-info">Search a hero</div>
+                : ( heroes.length === 0) && <div className="alert alert-danger">Hero <b>{ q }</b> not encountered</div>
+            }
+
+            {
+              heroes.map( hero => (
+                <HeroCard key={ hero.id } {...hero} />
+              ))
+            }
+
           </div>
         </div>
 
