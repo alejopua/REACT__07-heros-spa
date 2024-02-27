@@ -11,8 +11,7 @@ export const HeroCard = ({
   const heroImgUrl = `/assets/heroes/${ id }.jpg`
   return (
     <>
-
-        <div className=' mb-1'>
+        <div className='mb-1 animate__animated animate__fadeIn'>
           <div className="card m-1 p-0">
             <div className="row g-0">
               <div className="col-md-4" style={{ overflow: 'hidden' }}>
@@ -29,26 +28,6 @@ export const HeroCard = ({
             </div>
           </div>
         </div>
-
-      {/* <div className="col">
-        <div className="card">
-          <div className="row">
-            <div className="col-4">
-              <img src={ heroImgUrl } alt={superhero} className="card-img"/>
-            </div>
-            <div className='col-8'>
-
-              <div className="card-body">
-                <h5 className='card-title'>{ superhero }</h5>
-                <p className="card-text">{ alterEgo }</p>
-
-                <Link to={`/hero/${ id }`}>...mas</Link>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </div> */}
     </>
   )
 }
