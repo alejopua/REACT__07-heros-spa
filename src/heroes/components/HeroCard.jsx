@@ -4,10 +4,8 @@ import { Link } from 'react-router-dom'
 export const HeroCard = ({
   id,
   superhero, 
-  publisher, 
   alterEgo,
   firstAppearance,
-  characters,
 }) => {
 
   const heroImgUrl = `/assets/heroes/${ id }.jpg`
