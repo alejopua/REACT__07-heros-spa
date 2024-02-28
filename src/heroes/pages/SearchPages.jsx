@@ -20,7 +20,7 @@ export const SearchPages = () => {
 
   return (
     <>
-      <h1 className="mt-4">Search</h1>
+      <h1>Search</h1>
       <hr />
 
       <div className="row">
