@@ -17,4 +17,8 @@ describe('Testing in <PublicRoute />', () => {
     expect( screen.getByText('Test') ).toBeTruthy();
   });
 
+  test('should sail if it is authenticated.', () => {
+
+  });
+
 });
