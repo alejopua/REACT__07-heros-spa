@@ -6,6 +6,8 @@ import { PrivateRoute } from "../../src/router/PrivateRoute";
 describe('Testing in <PublicRoute />', () => {
   
   test('should show -children- if it is authenticated.', () => {
+
+    Storage.prototype.setItem = jest.fn()
     const value = { 
       logged: true,
       user: {
@@ -32,6 +34,7 @@ describe('Testing in <PublicRoute />', () => {
     )
 
     expect( screen.getByText('Test marvel page') ).toBeTruthy();
+    expect( localStorage.setItem ).toHaveBeenCalledWith('lastPath', '/*')
   });
 
   test('should show -/login- if it is not authenticated.', () => {
