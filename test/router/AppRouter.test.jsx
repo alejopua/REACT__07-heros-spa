@@ -24,7 +24,10 @@ describe('Testing in <AppRouter />', () => {
   test('should show marvel component if it is authenticator', () => {
     const contextValue = {
       logged: true,
-    }
+      user: {
+        id: 1,
+        name: 'Luis',
+    }}
 
     render(
       <MemoryRouter initialEntries={['/marvel']}>
@@ -33,7 +36,6 @@ describe('Testing in <AppRouter />', () => {
         </AuthContext.Provider>
       </MemoryRouter>
     )
-    
-    expect( screen.getAllByText('MarvelPages')).toBeTruthy();
+    expect( screen.getAllByText('Luis')).toBeTruthy();
   });
 });
