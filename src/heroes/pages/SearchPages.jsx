@@ -49,7 +49,7 @@ export const SearchPages = () => {
             {
               ( q === '' ) 
                 ? <div className="alert alert-info">Search a hero</div>
-                : ( heroes.length === 0) && <div className="alert alert-danger">Hero <b>{ q }</b> not encountered</div>
+                : ( heroes.length === 0) && <div aria-label='alertDanger' className="alert alert-danger">Hero <b>{ q }</b> not encountered</div>
             }
 
             {
