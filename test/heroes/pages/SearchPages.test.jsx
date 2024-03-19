@@ -17,6 +17,8 @@ describe('Name of the group', () => {
 
     const imgHero = screen.getByRole('img')
     expect( imgHero.src ).toContain('/heroes/dc-batman.jpg')
+
+    screen.debug()
   });
 
 });
