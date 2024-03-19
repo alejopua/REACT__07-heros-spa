@@ -5,7 +5,6 @@ import { DCPages, MarvelPages, SearchPages, HeroPages } from '../pages'
 
 export const HeroesRoutes = () => {
   const location = useLocation();
-  console.log({location});
   const [isSpecificRouteActive, setIsSpecificRouteActive] = useState(false);
 
   useEffect(() => {
